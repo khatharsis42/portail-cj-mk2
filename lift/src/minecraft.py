@@ -40,6 +40,7 @@ def stop():
 def restart():
     stop()
     while is_running():
+        app.logger.info("Waiting for server to shutdown")
         sleep(1)
     launch()
     return redirect("/after-restart")
