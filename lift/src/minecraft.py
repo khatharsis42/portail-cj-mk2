@@ -42,5 +42,5 @@ def restart():
     while is_running():
         app.logger.info("Waiting for server to shutdown")
         sleep(1)
-    launch()
+    start()
     return redirect("/after-restart")
