@@ -39,12 +39,7 @@ def stop():
 @mc.route("/restart-server")
 def restart():
     stop()
-    debug=True
-    #while is_running():
-    while (debug):
-        debug_result = os.system("""pgrep -f "^java.*server\..*\.jar nogui$" """)
-        print("found : ", debug_result)
-        debug = (debug_result == 0)
+    while is_running():
         sleep(1)
     launch()
     return redirect("/after-restart")
