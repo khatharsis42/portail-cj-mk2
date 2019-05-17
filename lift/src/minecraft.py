@@ -12,8 +12,8 @@ def is_running():
 def has_tmux():
     return os.system("tmux has -t =minecraft")==0
 
-@mc.route("/launch-server")
-def launch():
+@mc.route("/mc-start")
+def start():
     # if no tmux called minecraft create one
     if not has_tmux():
         os.system("tmux new -d -s minecraft")
@@ -23,7 +23,7 @@ def launch():
     os.system("""tmux send-keys -t minecraft "mc-snap" ENTER""")
     return redirect("/after-launch")
 
-@mc.route("/stop-server")
+@mc.route("/mc-stop")
 def stop():
     # if no server running cannot operate
     if not is_running():
@@ -36,7 +36,7 @@ def stop():
     os.system("""tmux send-keys -t minecraft "stop" ENTER""")
     return redirect("/after-stop")
 
-@mc.route("/restart-server")
+@mc.route("/mc-restart")
 def restart():
     stop()
     while is_running():
