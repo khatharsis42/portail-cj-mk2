@@ -17,9 +17,25 @@
                 <div class="col-xl-8">
                     <h1 class="display-3">Portail du Club Jeux</h1>
                 </div>
+		<div class="w3-bar w3-black">
+			   <button class="w3-bar-item w3-button" onclick="openTab('Liens')">Liens</button>
+			     <button class="w3-bar-item w3-button" onclick="openTab('Minecraft')">Minecraft</button>
+		</div> 
+		<div id="Liens" class="tab">
+			  <h2>Liens vers les services du CJ</h2>
+			  <h3><a href="/app">Jukebox</a></h3>
+			  <p>Le jukebox du CJ, qui permet aux membres de passer des musiques dans le local en les ajoutant à une playlist partagée.</p>
+			  <h3><a href="/phpmyadmin">BDD</a></h3>
+			  <p>La base de données des livres, jeux, etc du CJ.</p>
+		</div>
+		<div id="Minecraft" class="tab">
+			  <h2>Serveur Minecraft</h2>
+			    <p>Insérer une interface pour gérer le serveur minecraft</p>
+		</div>
             </div></div>
 
 
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	    <script src="{{ url_for('static', filename='scripts/opentab.js') }}"></script>
     </body>
 </html>
