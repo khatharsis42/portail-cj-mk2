@@ -28,13 +28,7 @@
 			  <h3><a href="http://{{ request.host.split(':')[0] }}:80/phpmyadmin">BDD</a></h3>
 			  <p>La base de données des livres, jeux, etc du CJ.</p>
 		</div>
-		<div id="Minecraft" class="tab">
-			  <h2>Serveur Minecraft</h2>
-			    <p>Insérer une interface pour gérer le serveur minecraft</p>
-			    <a href="/mc-start">Launch server</a>
-			    <a href="/mc-stop">Stop server</a>
-			    <a href="/mc-restart">Restart server</a>
-		</div>
+		{% include 'minecraft.html' %}
             </div></div>
 
 
