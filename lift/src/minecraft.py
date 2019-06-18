@@ -12,17 +12,6 @@ def is_running():
 def has_tmux():
     return os.system("tmux has -t =minecraft")==0
 
-# adds minecraft related statuses to the dict d
-def minecraft_status(d):
-    if (has_tmux()):
-        d['tmux']='running'
-    else:
-        d['tmux']='stopped'
-    if (is_running()):
-        d['mc_server']='running'
-    else:
-        d['mc_server']='stopped'
-
 @mc.route("/mc-start")
 def start():
     # if no tmux called minecraft create one

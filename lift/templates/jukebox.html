@@ -1,0 +1,15 @@
+<div id="Jukebox" class="tab">
+	  <h2>Jukebox</h2>
+	  <p>Le <a href="http://{{ url_name(request.host) }}:8080/">jukebox</a> du CJ, qui permet aux membres de passer des musiques dans le local en les ajoutant à une playlist partagée.</p>
+	    <p>Jukebox status :
+	    <ul>
+		    <li>Tmux : {{ status['juk_tmux'] }}</li>
+		    <li>Up : {{ status['juk_get'] }}</li>
+	    </ul>
+	    </p>
+	    <!--
+	    <a href="/mc-start">Launch jukebox</a>
+	    <a href="/mc-stop">Stop jukebox</a>
+	    <a href="/mc-restart">Restart jukebox</a>
+	    -->
+</div>

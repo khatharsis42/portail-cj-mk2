@@ -19,15 +19,16 @@
                 </div>
 		<div class="w3-bar w3-black">
 			   <button class="w3-bar-item w3-button" onclick="openTab('Liens')">Liens</button>
+			     <button class="w3-bar-item w3-button" onclick="openTab('Jukebox')">Jukebox</button>
 			     <button class="w3-bar-item w3-button" onclick="openTab('Minecraft')">Minecraft</button>
 		</div> 
 		<div id="Liens" class="tab">
 			  <h2>Liens vers les services du CJ</h2>
-			  <h3><a href="http://{{ request.host.split(':')[0] }}:8080/">Jukebox</a></h3>
-			  <p>Le jukebox du CJ, qui permet aux membres de passer des musiques dans le local en les ajoutant à une playlist partagée.</p>
-			  <h3><a href="http://{{ request.host.split(':')[0] }}:80/phpmyadmin">BDD</a></h3>
+			  <h3><a href="http://{{ url_name(request.host) }}:8080/">Jukebox</a></h3>
+			  <h3><a href="http://{{ url_name(request.host) }}:80/phpmyadmin">BDD</a></h3>
 			  <p>La base de données des livres, jeux, etc du CJ.</p>
 		</div>
+		{% include 'jukebox.html' %}
 		{% include 'minecraft.html' %}
             </div></div>
 
