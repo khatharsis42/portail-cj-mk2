@@ -1,3 +1,4 @@
+import os
 from src.minecraft import is_running, has_tmux
 import urllib.request, urllib.error
 
@@ -16,7 +17,7 @@ def minecraft_status(d):
         d['mc_server']='stopped'
 
 def jukebox_status(d):
-    if ("tmux has -t =jukebox")==0:
+    if os.system("tmux has -t =jukebox")==0:
         d['juk_tmux']='running'
     else:
         d['juk_tmux']='stopped'
