@@ -18,8 +18,8 @@ def start():
     if not has_tmux():
         os.system("tmux new -d -s minecraft")
     if is_running():
-        # return message : the server is already running
-        return redirect("/minecraft-running")
+        app.logger.info("minecraft server already running")
+        return redirect("/?tab=Minecraft")
     os.system("""tmux send-keys -t minecraft "mc-snap" ENTER""")
     return redirect("/?tab=Minecraft")
 
@@ -27,12 +27,12 @@ def start():
 def stop():
     # if no server running cannot operate
     if not is_running():
-        # return message : no server running
-        return redirect("/no-minecraft")
+        app.logger.info("minecraft not running")
+        return redirect("/?tab=Minecraft")
     # if no tmux called minecraft cannot operate
     if not has_tmux():
-        # return message : no tmux with correct name
-        return redirect("/no-tmux")
+        app.logger.info("no tmux with correct name 'minecraft'")
+        return redirect("/?tab=Minecraft")
     os.system("""tmux send-keys -t minecraft "stop" ENTER""")
     return redirect("/?tab=Minecraft")
 
