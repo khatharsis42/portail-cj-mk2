@@ -21,7 +21,7 @@ def start():
         # return message : the server is already running
         return redirect("/minecraft-running")
     os.system("""tmux send-keys -t minecraft "mc-snap" ENTER""")
-    return redirect("/after-launch")
+    return redirect("/?tab=Minecraft")
 
 @mc.route("/mc-stop")
 def stop():
@@ -34,7 +34,7 @@ def stop():
         # return message : no tmux with correct name
         return redirect("/no-tmux")
     os.system("""tmux send-keys -t minecraft "stop" ENTER""")
-    return redirect("/after-stop")
+    return redirect("/?tab=Minecraft")
 
 @mc.route("/mc-restart")
 def restart():
@@ -43,4 +43,4 @@ def restart():
         app.logger.info("Waiting for server to shutdown")
         sleep(1)
     start()
-    return redirect("/after-restart")
+    return redirect("/?tab=Minecraft")
