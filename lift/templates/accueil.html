@@ -14,22 +14,39 @@
 	<body onload=openTab("{{ current_tab }}")>
 
         <div class="container-fluid"><div class="row">
-                <div class="col-xl-8">
+                <div class="row">
                     <h1 class="display-3">Portail du Club Jeux</h1>
                 </div>
-		<nav class="w3-bar w3-black">
-			<a href="/?tab=Liens">Liens</a>
-			<a href="/?tab=Jukebox">Jukebox</a>
-			<a href="/?tab=Minecraft">Minecraft</a>
-		</nav> 
-		<div id="Liens" class="tab">
-			  <h2>Liens vers les services du CJ</h2>
-			  <h3><a href="http://{{ url_name(request.host) }}:8080/">Jukebox</a></h3>
-			  <h3><a href="http://{{ url_name(request.host) }}:80/phpmyadmin">BDD</a></h3>
-			  <p>La base de données des livres, jeux, etc du CJ.</p>
-		</div>
+		<div class="clearfix">
+                         <ul class="nav">
+                             <li class="nav-item">
+                                 <p class="nav-link">
+                                 <a href="/?tab=Liens">Liens</a>
+                                 </p>
+                             </li>
+                             <li class="nav-item">
+                                 <p class="nav-link">
+                                 <a href="/?tab=Minecraft">Minecraft</a>
+                                 </p>
+                             </li>
+                             <li class="nav-item">
+                                 <p class="nav-link">
+				 <a href="/?tab=Jukebox">Jukebox</a>
+				 </p>
+                             </li>
+                             <li class="nav-item">
+                                 <p class="nav-link">
+                                 <a href="/?tab=Inspirobot">Inspirobot</a>
+                                 </p>
+                             </li>
+                         </ul>
+                </div>
+		<div class='content'>
+		{% include 'liens.html' %}
 		{% include 'jukebox.html' %}
 		{% include 'minecraft.html' %}
+		{% include 'inspirobot.html' %}
+		</div>
             </div></div>
 
 

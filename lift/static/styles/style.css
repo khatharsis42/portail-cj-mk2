@@ -1,48 +1,23 @@
+nav {
+    display:block;
+}
+
+nav a {
+    display:inline-block;
+    border:1px solid grey;
+    padding 1px;
+}
+
+.content {
+    align:top;
+}
+
 .icon {
     height: 20px;
     display: block;
 }
 
-#search_results .btn-remove, #search_results .track-user, #suggestions .btn-remove{
-    display: none;
-}
-#search_results li {
-	cursor: pointer;
-}
-
-.albumart {
-        display: block;
-        max-width: 280px;
-        max-height: 140px;
-	width: 100%;;
-        height: auto;
-}
-
-.track-title {
-	display: block;
-    font-size: x-large;
-}
-.track-artist {
-	display: block;
-}
-
-.btn-remove {
-	cursor:pointer
-}
 .centered {
 	margin: auto
 }
-.track-duration,.track-user,.track-source {
-	color: #aaa;
-}
 
-.playlist-title {
-	text-align: center;
-	color: grey;
-	letter-spacing: 10px;
-	margin-top: 13px;
-}
-
-iframe#YT {
-    width: 100%;
-}

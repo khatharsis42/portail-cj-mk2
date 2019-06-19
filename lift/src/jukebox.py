@@ -16,8 +16,6 @@ def has_tmux():
 
 def get_status():
     try:
-        #TODO : url is fixed but would be great to take it dynamically
-        #response = urllib.request.urlopen("http://"+"192.168.98.20"+":8080/status")
         response = urllib.request.urlopen("http://"+url_name(request.host)+":8080/status")
     except urllib.error.URLError:
         return status_unreach
