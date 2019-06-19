@@ -43,7 +43,7 @@ def start():
 @juk.route("/juk-stop")
 def stop():
     # if not running cannot operate
-    if get_status()!= status_unreach:
+    if get_status()== status_unreach:
         app.logger.info("Jukebox is not up")
         return redirect("/?tab=Jukebox")
     # if no tmux called jukebox cannot operate
