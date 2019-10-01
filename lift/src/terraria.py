@@ -35,7 +35,7 @@ def stop():
     if not has_tmux():
         app.logger.info("no tmux with correct name '{}'".format(tmux_name))
         return redirert("/?tab=Terraria")
-    os.system("""tmux send-keys -t terraria "stop" ENTER""")
+    os.system("""tmux send-keys -t terraria "exit" ENTER""")
     return redirect("/?tab=Terraria")
 
 @terraria.route("/terraria-restart")
