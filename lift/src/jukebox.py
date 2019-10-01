@@ -34,7 +34,7 @@ def start():
         # return message : the jukebox is already running
         return redirect("/?tab=Jukebox")
     #os.system("""tmux send-keys -t jukebox C-c "cd /home/membre/soft/jukebox-ultra-nrv/" ENTER""")
-    os.system("""tmux send-keys -t jukebox C-c ENTER "cd /home/mad/Documents/prog/python/jukebox-ultra-nrv/" ENTER""")
+    os.system("""tmux send-keys -t jukebox "cd /home/mad/Documents/prog/python/jukebox-ultra-nrv/" ENTER""")
     os.system("""tmux send-keys -t jukebox "python3 run.py" ENTER""")
     return redirect("/?tab=Jukebox")
 
