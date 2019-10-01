@@ -11,6 +11,7 @@ status_ok = 'ok'
 status_unreach = 'unreachable'
 status_ukerr = 'unknown error'
 
+
 def has_tmux():
     return os.system("tmux has -t =jukebox")==0
 
@@ -34,7 +35,7 @@ def start():
         # return message : the jukebox is already running
         return redirect("/?tab=Jukebox")
     #os.system("""tmux send-keys -t jukebox C-c "cd /home/membre/soft/jukebox-ultra-nrv/" ENTER""")
-    os.system("""tmux send-keys -t jukebox "cd /home/membre/Documents/prog/python/jukebox-ultra-nrv/" ENTER""")
+    os.system("""tmux send-keys -t jukebox "cd {}" ENTER""".format(app.config["JK_PATH"]))
     os.system("""tmux send-keys -t jukebox "python3 run.py" ENTER""")
     return redirect("/?tab=Jukebox")
 
