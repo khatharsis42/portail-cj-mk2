@@ -8,7 +8,6 @@ tmux_name = "terraria"
 
 # searching for something like server.1.14.1.jar
 def is_running():
-    # TODO
     return os.system("""pgrep "^TerrariaServer$" """)==0
 
 def has_tmux():
@@ -23,6 +22,12 @@ def start():
         app.logger.info("terraria server already running")
         return redirect("/?tab=Terraria")
     os.system("""tmux send-keys -t {} "terraria-server" ENTER""".format(tmux_name))
+    sleep(5)
+    os.system("""1 ENTER""") # world selection
+    os.system("""24 ENTER""") # nbr players (8 by default)
+    os.system("""ENTER""") # server port (7777 by default)
+    os.system("""y ENTER""") # forward port
+    os.system("""ENTER""") # password (none by default)
     return redirect("/?tab=Terraria")
 
 @terraria.route("/terraria-stop")
