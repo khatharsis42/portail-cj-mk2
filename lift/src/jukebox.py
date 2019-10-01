@@ -16,7 +16,7 @@ def has_tmux():
 
 def get_status():
     try:
-        response = urllib.request.urlopen("http://"+url_name(request.host)+":8080/status")
+        response = urllib.request.urlopen("http://jukebox.cj")
     except urllib.error.URLError:
         return status_unreach
     except:
@@ -34,7 +34,7 @@ def start():
         # return message : the jukebox is already running
         return redirect("/?tab=Jukebox")
     #os.system("""tmux send-keys -t jukebox C-c "cd /home/membre/soft/jukebox-ultra-nrv/" ENTER""")
-    os.system("""tmux send-keys -t jukebox "cd /home/mad/Documents/prog/python/jukebox-ultra-nrv/" ENTER""")
+    os.system("""tmux send-keys -t jukebox C-c "cd /home/membre/Documents/prog/python/jukebox-ultra-nrv/" ENTER""")
     os.system("""tmux send-keys -t jukebox "python3 run.py" ENTER""")
     return redirect("/?tab=Jukebox")
 
