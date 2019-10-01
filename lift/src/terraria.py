@@ -3,7 +3,7 @@ from time import sleep
 from flask import Blueprint, redirect
 from flask import current_app as app
 
-mc = Blueprint("mc", __name__)
+terraria = Blueprint("terraria", __name__)
 tmux_name = "terraria"
 
 # searching for something like server.1.14.1.jar
@@ -14,7 +14,7 @@ def is_running():
 def has_tmux():
     return os.system("tmux has -t ={}".format(tmux_name))==0
 
-@mc.route("/terraria-start")
+@terraria.route("/terraria-start")
 def start():
     # if no tmux called terraria create one
     if not has_tmux():
@@ -25,7 +25,7 @@ def start():
     os.system("""tmux send-keys -t {} "terraria-server" ENTER""".format(tmux_name))
     return redirect("/?tab=Terraria")
 
-@mc.route("/terraria-stop")
+@terraria.route("/terraria-stop")
 def stop():
     # if no server running cannot operate
     if not is_running():
@@ -38,7 +38,7 @@ def stop():
     os.system("""tmux send-keys -t terraria "stop" ENTER""")
     return redirect("/?tab=Terraria")
 
-@mc.route("/terraria-restart")
+@terraria.route("/terraria-restart")
 def restart():
     stop()
     while is_running():
