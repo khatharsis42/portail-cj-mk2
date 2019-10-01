@@ -1,7 +1,7 @@
 # Enable debug flask server
 DEBUG=True
 # Listen address. Set to 0.0.0.0 for all interfaces
-LISTEN_ADDR="0.0.0.0"
+LISTEN_ADDR="127.0.0.1"
 # Listen port
 LISTEN_PORT=5000
 # Name of the app
