@@ -26,11 +26,11 @@ def start():
         return redirect("/?tab=Terraria")
     send_to_tmux("\"terraria-server\" ENTER")
     sleep(5)
-    send_to_tmux("\"1 ENTER\"") # world selection
-    send_to_tmux("\"24 ENTER\"") # nbr players (8 by default)
-    send_to_tmux("\"ENTER\"") # server port (7777 by default)
-    send_to_tmux("\"y ENTER\"") # forward port
-    send_to_tmux("\"ENTER\"") # password (none by default)
+    send_to_tmux("1 ENTER") # world selection
+    send_to_tmux("24 ENTER") # nbr players (8 by default)
+    send_to_tmux("ENTER") # server port (7777 by default)
+    send_to_tmux("y ENTER") # forward port
+    send_to_tmux("ENTER") # password (none by default)
     return redirect("/?tab=Terraria")
 
 @terraria.route("/terraria-stop")
