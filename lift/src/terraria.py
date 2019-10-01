@@ -13,6 +13,9 @@ def is_running():
 def has_tmux():
     return os.system("tmux has -t ={}".format(tmux_name))==0
 
+def send_to_tmux(command):
+    os.system("""tmux send-keys -t {} {}""".format(tmux_name, command))
+    
 @terraria.route("/terraria-start")
 def start():
     # if no tmux called terraria create one
@@ -21,13 +24,13 @@ def start():
     if is_running():
         app.logger.info("terraria server already running")
         return redirect("/?tab=Terraria")
-    os.system("""tmux send-keys -t {} "terraria-server" ENTER""".format(tmux_name))
+    send_to_tmux("\"terraria-server\" ENTER")
     sleep(5)
-    os.system("""1 ENTER""") # world selection
-    os.system("""24 ENTER""") # nbr players (8 by default)
-    os.system("""ENTER""") # server port (7777 by default)
-    os.system("""y ENTER""") # forward port
-    os.system("""ENTER""") # password (none by default)
+    send_to_tmux("\"1 ENTER\"") # world selection
+    send_to_tmux("\"24 ENTER\"") # nbr players (8 by default)
+    send_to_tmux("\"ENTER\"") # server port (7777 by default)
+    send_to_tmux("\"y ENTER\"") # forward port
+    send_to_tmux("\"ENTER\"") # password (none by default)
     return redirect("/?tab=Terraria")
 
 @terraria.route("/terraria-stop")
