@@ -47,8 +47,12 @@
                          </ul>
                 </div>
 		<div class='content'>
-		{% include 'liens.html' %}
-		{% include 'jukebox.html' %}
+            {% for game in games %}
+		        {% include 'game.html' %}
+            {% endfor %}
+
+		{% include 'game.html' %}
+		{% include 'game.html' %}
 		{% include 'minecraft.html' %}
 		{% include 'terraria.html' %}
 		{% include 'inspirobot.html' %}

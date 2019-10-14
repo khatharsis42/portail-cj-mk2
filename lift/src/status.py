@@ -1,4 +1,4 @@
-from src.minecraft import is_running
+import src.minecraft as minecraft
 from src.minecraft import has_tmux as mc_tmux
 from src.terraria import is_running as terraria_running
 from src.terraria import has_tmux as terraria_tmux

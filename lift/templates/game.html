@@ -1,0 +1,11 @@
+<div id="{{ name }}" class="tab">
+    <h2>Serveur {{ name }}</h2>
+    <h3>Server status :</h3>
+    <ul>
+        <li>Tmux : {{ status[name]['tmux'] }}</li>
+        <li>Server : {{ status[name]['server'] }}</li>
+    </ul>
+    <a href="/game/{{ name }}-start">Launch server</a>
+    <a href="/game/{{ name }}-stop">Stop server</a>
+    <a href="/game/{{ name }}-restart">Restart server</a>
+</div>
