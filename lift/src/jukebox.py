@@ -26,11 +26,11 @@ def get_status():
     try:
         response = urllib.request.urlopen("http://jukebox.cj")
     except urllib.error.URLError:
-        d['juk_get'] = status_unreach
+        d['juk_server'] = status_unreach
     except:
-        d['juk_get'] = status_ukerr
+        d['juk_server'] = status_ukerr
     else:
-        d['juk_get'] = status_ok
+        d['juk_server'] = status_ok
     return d
 
 
@@ -39,7 +39,7 @@ def start():
     # if no tmux called minecraft create one
     if not has_tmux():
         os.system("tmux new -d -s jukebox")
-    if get_status()['juk_get'] == status_ok:
+    if get_status()['juk_server'] == status_ok:
         # return message : the jukebox is already running
         return redirect("/?tab=Jukebox")
     os.system("""tmux send-keys -t jukebox "cd {}" ENTER""".format(app.config["JK_PATH"]))
@@ -51,7 +51,7 @@ def start():
 def stop():
     # if not running cannot operate
     status = get_status()
-    if status['juk_get'] == status_unreach:
+    if status['juk_server'] == status_unreach:
         app.logger.info("Jukebox is not up")
         return redirect("/?tab=Jukebox")
     # if no tmux called jukebox cannot operate
@@ -65,7 +65,7 @@ def stop():
 @juk.route("/juk-restart")
 def restart():
     stop()
-    while get_status['juk_get'] == status_ok:
+    while get_status['juk_server'] == status_ok:
         app.logger.info("Waiting for jukebox to shutdown")
         sleep(1)
     start()

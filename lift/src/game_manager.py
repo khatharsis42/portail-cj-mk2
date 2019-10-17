@@ -2,8 +2,8 @@ import json
 import os
 
 from flask import current_app as app
-from src.game import Game
 
+from src.game import Game
 
 
 class GameManager:
@@ -22,9 +22,10 @@ class GameManager:
     def load_all(self):
         for f in os.listdir(self.game_directory):
 
-            #app.logger.info("in for {}".format(f))
-            #if f.is_dir(os.join(self.game_directory, f)):
-            app.logger.info("Loading configuration {}".format(f))
+            # app.logger.info("in for {}".format(f))
+            # if f.is_dir(os.join(self.game_directory, f)):
+            # app.logger.info("Loading configuration {}".format(f))
+            print(f)
             gamename = os.path.splitext(f)[0]
             self.load_game(gamename)
 
