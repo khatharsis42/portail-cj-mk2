@@ -1,8 +1,10 @@
 from urllib import request, error
 from flask import current_app as app
 
+
 def url_name(current_url):
     return current_url.split(':')[0]
+
 
 def get_inspiro(d):
     try:
