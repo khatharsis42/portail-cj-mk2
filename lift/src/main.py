@@ -23,7 +23,7 @@ gameManager.load_all()
 @app.route("/")
 def index():
     status=dict()
-    jukebox_status(status)
+    jukebox_status()
     get_inspiro(status)
     current_tab = request.args.get("tab", "Liens", type=str)
     return render_template("accueil.html", status=status, url_name=url_name, current_tab=current_tab)
