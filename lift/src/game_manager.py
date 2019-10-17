@@ -24,7 +24,7 @@ class GameManager:
 
             #app.logger.info("in for {}".format(f))
             #if f.is_dir(os.join(self.game_directory, f)):
-            #app.logger.info("loading {}".format(f))
+            app.logger.info("Loading configuration {}".format(f))
             gamename = os.path.splitext(f)[0]
             self.load_game(gamename)
 
