@@ -1,11 +1,85 @@
-<div id="{{ name }}" class="tab">
-    <h2>Serveur {{ name }}</h2>
-    <h3>Server status :</h3>
-    <ul>
-        <li>Tmux : {{ status[name]['tmux'] }}</li>
-        <li>Server : {{ status[name]['server'] }}</li>
-    </ul>
-    <a href="/game/{{ name }}-start">Launch server</a>
-    <a href="/game/{{ name }}-stop">Stop server</a>
-    <a href="/game/{{ name }}-restart">Restart server</a>
-</div>
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles/bootstrap.min.css') }}" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!--			No favicon for now
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+-->
+        <title>Portail | Games</title>
+    </head>
+
+    <body>
+        {% include 'header.html' %}
+
+        <div class="container">
+            <div class="row">
+                <a href="/game/reload/" title="Reload games" class="btn btn-outline-primary">Reload all settings games</a>
+            </div>
+            <div class="row m-3 p-1">
+                <ul class="list-group">
+                {% for name in games %}
+                    <li class="list-group-item m-2 p-4">
+                        <h2>Serveur {{ name }}</h2>
+                        <div class="row m-1">
+                            <p>{{ descriptions[name] }}</p>
+                        </div>
+
+                        <h3>Server status :</h3>
+                        <div class="row m-2 mb-4">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    Tmux
+                                {% if status[name]['tmux'] == "running" %}
+                                    <span class="badge badge-success">Running</span>
+                                {% else %}
+                                    <span class="badge badge-danger">Stopped</span>
+                                {% endif %}
+                                </li>
+                                <li class="list-inline-item">
+                                    Server
+                                {% if status[name]['server'] == "running" %}
+                                    <span class="badge badge-success">Running</span>
+                                {% else %}
+                                    <span class="badge badge-danger">Stopped</span>
+                                {% endif %}
+                                </li>
+                            </ul>
+                        </div>
+                        {#
+                            {% if status[name]['tmux'] == "running" %}
+                                <span class="btn btn-primary disabled">Tmux is running</span>
+                            {% else %}
+                                <span class="btn btn-secondary disabled">Tmux stopped</span>
+                            {% endif %}
+
+                            {% if status[name]['server'] == "running" %}
+                                <span class="btn btn-primary disabled">Server is running</span>
+                            {% else %}
+                                <span class="btn btn-secondary disabled">Server stopped</span>
+                            {% endif %}
+                         #}
+                        <div class="row m-2">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a href="/game/start/{{ name }}" class="btn btn-primary">Launch server</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="/game/stop/{{ name }}" class="btn btn-outline-primary">Stop server</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="/game/restart/{{ name }}" class="btn btn-outline-primary">Restart server</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        {% include 'footer.html' %}
+    </body>
+</html>

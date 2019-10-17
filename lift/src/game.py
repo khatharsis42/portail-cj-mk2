@@ -1,6 +1,5 @@
 import os
 from time import sleep
-from flask import Blueprint, redirect
 from flask import current_app as app
 
 
@@ -11,7 +10,7 @@ from flask import current_app as app
 
 class Game:
 
-    def __init__(self, name, startup, stop, is_running, tmux_name=""):
+    def __init__(self, name, startup_cmd, stop_cmd, is_running_cmd, tmux_name="", description=""):
         """
 
         :param str name: should not have spaces or weird chars
@@ -21,17 +20,17 @@ class Game:
         :param is_running:
         """
         self.name = name
-        self.startup = startup
-        self.stop = stop
-        self.is_running = is_running
-        self.game_blueprint = Blueprint(self.name, __name__)
+        self.startup_cmd = startup_cmd
+        self.stop_cmd = stop_cmd
+        self.is_running_cmd = is_running_cmd
         if tmux_name != "":
             self.tmux_name = tmux_name
         else:
             self.tmux_name = self.name
+        self.description = description
 
     def is_running(self):
-        return os.system(self.is_running) == 0
+        return os.system(self.is_running_cmd) == 0
 
     def has_tmux(self):
         return os.system("tmux has -t ={}".format(self.tmux_name)) == 0
@@ -40,7 +39,7 @@ class Game:
         os.system("""tmux send-keys -t {} {}""".format(self.tmux_name, command))
 
     def get_status(self):
-        d = {}
+        d = dict()
         if self.has_tmux():
             d['tmux'.format(self.name)] = 'running'
         else:
@@ -49,7 +48,7 @@ class Game:
             d['server'.format(self.name)] = 'running'
         else:
             d['server'.format(self.name)] = 'stopped'
-            return d
+        return d
 
     def start(self):
         # if no tmux with the name create one
@@ -59,8 +58,7 @@ class Game:
             app.logger.info("{} server already running".format(self.name))
             return
         # start server
-        for command in self.startup:
-            # TODO we should add a way to input a bit of delay
+        for command in self.startup_cmd:
             self.send_to_tmux(command)
         return
 
@@ -73,8 +71,7 @@ class Game:
         if not self.has_tmux():
             app.logger.info("no tmux with correct name '{}'".format(self.tmux_name))
             return
-        for command in self.stop:
-            # TODO we should add a way to input a bit of delay
+        for command in self.stop_cmd:
             self.send_to_tmux(command)
         return
 

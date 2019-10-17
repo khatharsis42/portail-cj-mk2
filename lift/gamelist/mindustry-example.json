@@ -1,0 +1,15 @@
+{
+  "name": "mindustry-example",
+  "start": [
+    "\"mindustry-server\" ENTER",
+    "\"allow-custom-clients yes\" ENTER",
+    "\"host shattered\" ENTER",
+    "\"load 1\" ENTER"
+  ],
+  "stop": [
+    "\"save 1\" ENTER",
+    "\"exit\" ENTER"
+  ],
+  "is_running": "pgrep -f \"mindustry-server.*\\.jar\"",
+  "description": "Mindustry server, running map Shattered, saving in slot 1."
+}
