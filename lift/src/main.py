@@ -3,7 +3,7 @@ import logging
 
 from src.game_manager import GameManager
 from src.jukebox import juk
-from src.status import jukebox_status
+from src.jukebox import get_status as jukebox_status
 from src.utils import url_name, get_inspiro
 
 app = Flask(__name__, template_folder="../templates", static_folder="../static")
