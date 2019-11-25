@@ -1,0 +1,128 @@
+[10-16-2019 | 18:02:19] [INFO] Server loaded. Type 'help' for help.
+[10-16-2019 | 18:02:28] [ERR!] Invalid command. Type 'help' for help.
+[10-16-2019 | 18:03:15] [INFO] Commands:
+[10-16-2019 | 18:03:15] [INFO]    help - Displays this command list.
+[10-16-2019 | 18:03:15] [INFO]    version - Displays server version info.
+[10-16-2019 | 18:03:15] [INFO]    exit - Exit the server application.
+[10-16-2019 | 18:03:15] [INFO]    stop - Stop hosting the server.
+[10-16-2019 | 18:03:15] [INFO]    host <mapname> [mode] - Open the server with a specific map.
+[10-16-2019 | 18:03:15] [INFO]    port [port] - Sets or displays the port for hosting the server.
+[10-16-2019 | 18:03:15] [INFO]    maps - Display all available maps.
+[10-16-2019 | 18:03:15] [INFO]    reloadmaps - Reload all maps from disk.
+[10-16-2019 | 18:03:15] [INFO]    status - Display server status.
+[10-16-2019 | 18:03:15] [INFO]    plugins - Display all loaded plugins.
+[10-16-2019 | 18:03:15] [INFO]    plugin <name...> - Display information about a loaded plugin.
+[10-16-2019 | 18:03:15] [INFO]    say <message...> - Send a message to all players.
+[10-16-2019 | 18:03:15] [INFO]    difficulty <difficulty> - Set game difficulty.
+[10-16-2019 | 18:03:15] [INFO]    fillitems [team] - Fill the core with items.
+[10-16-2019 | 18:03:15] [INFO]    name [name...] - Change the server display name.
+[10-16-2019 | 18:03:15] [INFO]    playerlimit [off/somenumber] - Set the server player limit.
+[10-16-2019 | 18:03:15] [INFO]    whitelist [on/off...] - Enable/disable whitelisting.
+[10-16-2019 | 18:03:15] [INFO]    whitelisted - List the entire whitelist.
+[10-16-2019 | 18:03:15] [INFO]    whitelist-add <ID> - Add a player to the whitelist by ID.
+[10-16-2019 | 18:03:15] [INFO]    whitelist-remove <ID> - Remove a player to the whitelist by ID.
+[10-16-2019 | 18:03:15] [INFO]    crashreport <on/off> - Disables or enables automatic crash reporting
+[10-16-2019 | 18:03:15] [INFO]    logging <on/off> - Disables or enables server logs
+[10-16-2019 | 18:03:15] [INFO]    strict <on/off> - Disables or enables strict mode
+[10-16-2019 | 18:03:15] [INFO]    socketinput [on/off] - Disables or enables a local TCP socket at port 6859 to recieve commands from other applications
+[10-16-2019 | 18:03:15] [INFO]    allow-custom-clients [on/off] - Allow or disallow custom clients.
+[10-16-2019 | 18:03:15] [INFO]    shuffle <on/off> - Set map shuffling.
+[10-16-2019 | 18:03:15] [INFO]    kick <username...> - Kick a person by name.
+[10-16-2019 | 18:03:15] [INFO]    ban <type-id/name/ip> <username/IP/ID...> - Ban a person.
+[10-16-2019 | 18:03:15] [INFO]    bans - List all banned IPs and IDs.
+[10-16-2019 | 18:03:15] [INFO]    unban <ip/ID> - Completely unban a person by IP or ID.
+[10-16-2019 | 18:03:15] [INFO]    admin <username...> - Make an online user admin
+[10-16-2019 | 18:03:15] [INFO]    unadmin <username...> - Removes admin status from an online player
+[10-16-2019 | 18:03:15] [INFO]    admins - List all admins.
+[10-16-2019 | 18:03:15] [INFO]    runwave - Trigger the next wave.
+[10-16-2019 | 18:03:15] [INFO]    load <slot> - Load a save from a slot.
+[10-16-2019 | 18:03:15] [INFO]    save <slot> - Save game state to a slot.
+[10-16-2019 | 18:03:15] [INFO]    gameover - Force a game over.
+[10-16-2019 | 18:03:15] [INFO]    info <IP/UUID/name...> - Find player info(s). Can optionally check for all names or IPs a player has had.
+[10-16-2019 | 18:03:15] [INFO]    gc - Trigger a grabage collection. Testing only.
+[10-16-2019 | 18:04:05] [INFO] Status: server closed
+[10-16-2019 | 18:04:07] [ERR!] Too few command arguments. Usage: host <mapname> [mode]
+[10-16-2019 | 18:04:09] [INFO] Status: server closed
+[10-16-2019 | 18:04:16] [INFO] Shuffle mode set to 'on'.
+[10-16-2019 | 18:04:19] [ERR!] Too few command arguments. Usage: host <mapname> [mode]
+[10-16-2019 | 18:04:27] [INFO] Loading map...
+[10-16-2019 | 18:04:28] [INFO] Map loaded.
+[10-16-2019 | 18:04:28] [INFO] Opened a server on port 6567.
+[10-16-2019 | 18:04:35] [INFO] Status:
+[10-16-2019 | 18:04:35] [INFO]   Playing on map Wasteland / Wave 1
+[10-16-2019 | 18:04:35] [INFO]   0 enemies.
+[10-16-2019 | 18:04:35] [INFO]   61 FPS, 13 MB used.
+[10-16-2019 | 18:04:35] [INFO]   No players connected.
+[10-16-2019 | 18:04:40] [INFO] Stopped server.
+[10-16-2019 | 18:04:53] [INFO] Maps:
+[10-16-2019 | 18:04:53] [INFO]   Ancient Caldera: Default / 256x256
+[10-16-2019 | 18:04:53] [INFO]   Fork: Default / 250x300
+[10-16-2019 | 18:04:53] [INFO]   Fortress: Default / 256x256
+[10-16-2019 | 18:04:53] [INFO]   Glacier: Default / 150x250
+[10-16-2019 | 18:04:53] [INFO]   Islands: Default / 256x256
+[10-16-2019 | 18:04:53] [INFO]   Labyrinth: Default / 200x200
+[10-16-2019 | 18:04:53] [INFO]   Maze: Default / 256x256
+[10-16-2019 | 18:04:53] [INFO]   Shattered: Default / 350x350
+[10-16-2019 | 18:04:53] [INFO]   Tendrils: Default / 300x300
+[10-16-2019 | 18:04:53] [INFO]   Triad: Default / 200x200
+[10-16-2019 | 18:04:53] [INFO]   Veins: Default / 350x200
+[10-16-2019 | 18:04:53] [INFO]   Wasteland: Default / 300x300
+[10-16-2019 | 18:04:53] [INFO] Map directory: /home/inazuma/programmes/lift-to-communism/lift/config/maps
+[10-16-2019 | 18:08:24] [INFO] Commands:
+[10-16-2019 | 18:08:24] [INFO]    help - Displays this command list.
+[10-16-2019 | 18:08:24] [INFO]    version - Displays server version info.
+[10-16-2019 | 18:08:24] [INFO]    exit - Exit the server application.
+[10-16-2019 | 18:08:24] [INFO]    stop - Stop hosting the server.
+[10-16-2019 | 18:08:24] [INFO]    host <mapname> [mode] - Open the server with a specific map.
+[10-16-2019 | 18:08:24] [INFO]    port [port] - Sets or displays the port for hosting the server.
+[10-16-2019 | 18:08:24] [INFO]    maps - Display all available maps.
+[10-16-2019 | 18:08:24] [INFO]    reloadmaps - Reload all maps from disk.
+[10-16-2019 | 18:08:24] [INFO]    status - Display server status.
+[10-16-2019 | 18:08:24] [INFO]    plugins - Display all loaded plugins.
+[10-16-2019 | 18:08:24] [INFO]    plugin <name...> - Display information about a loaded plugin.
+[10-16-2019 | 18:08:24] [INFO]    say <message...> - Send a message to all players.
+[10-16-2019 | 18:08:24] [INFO]    difficulty <difficulty> - Set game difficulty.
+[10-16-2019 | 18:08:24] [INFO]    fillitems [team] - Fill the core with items.
+[10-16-2019 | 18:08:24] [INFO]    name [name...] - Change the server display name.
+[10-16-2019 | 18:08:24] [INFO]    playerlimit [off/somenumber] - Set the server player limit.
+[10-16-2019 | 18:08:24] [INFO]    whitelist [on/off...] - Enable/disable whitelisting.
+[10-16-2019 | 18:08:24] [INFO]    whitelisted - List the entire whitelist.
+[10-16-2019 | 18:08:24] [INFO]    whitelist-add <ID> - Add a player to the whitelist by ID.
+[10-16-2019 | 18:08:24] [INFO]    whitelist-remove <ID> - Remove a player to the whitelist by ID.
+[10-16-2019 | 18:08:24] [INFO]    crashreport <on/off> - Disables or enables automatic crash reporting
+[10-16-2019 | 18:08:24] [INFO]    logging <on/off> - Disables or enables server logs
+[10-16-2019 | 18:08:24] [INFO]    strict <on/off> - Disables or enables strict mode
+[10-16-2019 | 18:08:24] [INFO]    socketinput [on/off] - Disables or enables a local TCP socket at port 6859 to recieve commands from other applications
+[10-16-2019 | 18:08:24] [INFO]    allow-custom-clients [on/off] - Allow or disallow custom clients.
+[10-16-2019 | 18:08:24] [INFO]    shuffle <on/off> - Set map shuffling.
+[10-16-2019 | 18:08:24] [INFO]    kick <username...> - Kick a person by name.
+[10-16-2019 | 18:08:24] [INFO]    ban <type-id/name/ip> <username/IP/ID...> - Ban a person.
+[10-16-2019 | 18:08:24] [INFO]    bans - List all banned IPs and IDs.
+[10-16-2019 | 18:08:24] [INFO]    unban <ip/ID> - Completely unban a person by IP or ID.
+[10-16-2019 | 18:08:24] [INFO]    admin <username...> - Make an online user admin
+[10-16-2019 | 18:08:24] [INFO]    unadmin <username...> - Removes admin status from an online player
+[10-16-2019 | 18:08:24] [INFO]    admins - List all admins.
+[10-16-2019 | 18:08:24] [INFO]    runwave - Trigger the next wave.
+[10-16-2019 | 18:08:24] [INFO]    load <slot> - Load a save from a slot.
+[10-16-2019 | 18:08:24] [INFO]    save <slot> - Save game state to a slot.
+[10-16-2019 | 18:08:24] [INFO]    gameover - Force a game over.
+[10-16-2019 | 18:08:24] [INFO]    info <IP/UUID/name...> - Find player info(s). Can optionally check for all names or IPs a player has had.
+[10-16-2019 | 18:08:24] [INFO]    gc - Trigger a grabage collection. Testing only.
+[10-16-2019 | 19:40:22] [ERR!] Invalid command. Type 'help' for help.
+[10-16-2019 | 19:43:58] [INFO] Shutting down server.
+[10-17-2019 | 13:31:49] [INFO] Server loaded. Type 'help' for help.
+[10-17-2019 | 13:31:49] [ERR!] Incorrect command usage.
+[10-17-2019 | 13:31:49] [INFO] Loading map...
+[10-17-2019 | 13:31:50] [INFO] Map loaded.
+[10-17-2019 | 13:31:54] [INFO] Opened a server on port 6567.
+[10-17-2019 | 13:31:54] [ERR!] Already hosting. Type 'stop' to stop hosting first.
+[10-17-2019 | 13:31:54] [INFO] Saved to slot 1.
+[10-17-2019 | 13:31:54] [INFO] Shutting down server.
+[10-17-2019 | 14:28:15] [INFO] Server loaded. Type 'help' for help.
+[10-17-2019 | 14:28:15] [ERR!] Incorrect command usage.
+[10-17-2019 | 14:28:15] [INFO] Loading map...
+[10-17-2019 | 14:28:15] [INFO] Map loaded.
+[10-17-2019 | 14:28:16] [INFO] Opened a server on port 6567.
+[10-17-2019 | 14:28:16] [ERR!] Already hosting. Type 'stop' to stop hosting first.
+[10-17-2019 | 14:34:33] [INFO] Game over!
+[10-17-2019 | 14:34:33] [INFO] Selected next map to be Glacier.

@@ -26,7 +26,8 @@ def index():
     jukebox_status()
     get_inspiro(status)
     current_tab = request.args.get("tab", "Liens", type=str)
-    return render_template("accueil.html", status=status, url_name=url_name, current_tab=current_tab)
+    return render_template("accueil.html", status=status, url_name=url_name, current_tab=current_tab,
+            jukebox_address=app.config['JK_ADDRESS'], bdd_address=app.config['BDD_ADDRESS'])
 
 
 @app.route("/game/")
