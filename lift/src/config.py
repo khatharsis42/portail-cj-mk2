@@ -8,3 +8,7 @@ LISTEN_PORT=5001
 JK_NAME="Lift to communism"
 # Jukebox path
 JK_PATH="/home/membre/soft/jukebox-ultra-nrv/"
+# Jukebox address
+JK_ADDRESS="http://jukebox.cj"
+# BDD
+BDD_ADDRESS="https://xkcd.com/404/"
