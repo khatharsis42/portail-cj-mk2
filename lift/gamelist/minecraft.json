@@ -1,0 +1,11 @@
+{
+  "name": "minecraft",
+  "start": [
+    "\"mc-snap\" ENTER"
+  ],
+  "stop": [
+    "\"stop\" ENTER"
+  ],
+  "is_running": "pgrep -f \"^java.*server\\..*\\.jar nogui$\"",
+  "description": "Minecraft server"
+}
