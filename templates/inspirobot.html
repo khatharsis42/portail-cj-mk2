@@ -1,12 +1,16 @@
+{% extends "page_template.html" %}
+
+{% block content %}
 <div id="Inspirobot" class="tab">
     <div class="container">
         <p class="font-italic">
             for endless enrichment of pointless human existence
         </p>
-	    <img src={{ status['img_inspi'] }} alt="inspirobot image"/>
+	    <img src={{ status }} alt="inspirobot image"/>
         <p class="small">
             Source : <a href="https://inspirobot.me/" title="Inspirobot">Inspirobot</a>
         </p>
     </div>
 </div>
+{% endblock %}
 

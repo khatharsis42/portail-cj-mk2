@@ -2,9 +2,8 @@ from flask import Flask, render_template, request, redirect, Blueprint
 import logging
 
 from src.game_manager import GameManager
-from src.jukebox import juk
-from src.jukebox import get_status as jukebox_status
-from src.utils import url_name, get_inspiro
+from src.jukebox import juk, get_status
+from src.utils import get_inspiro
 
 app = Flask(__name__, template_folder="../templates", static_folder="../static")
 
@@ -12,9 +11,8 @@ game_blueprint = Blueprint("game_manager_bp", __name__)
 app.register_blueprint(game_blueprint)
 app.register_blueprint(juk)
 
-log=logging.getLogger('werkzeug')
+log = logging.getLogger('werkzeug')
 log.setLevel(logging.INFO)
-
 
 gameManager = GameManager()
 gameManager.load_all()
@@ -22,12 +20,35 @@ gameManager.load_all()
 
 @app.route("/")
 def index():
-    status=dict()
-    jukebox_status()
-    get_inspiro(status)
-    current_tab = request.args.get("tab", "Liens", type=str)
-    return render_template("accueil.html", status=status, url_name=url_name, current_tab=current_tab,
-            jukebox_address=app.config['JK_ADDRESS'], bdd_address=app.config['BDD_ADDRESS'])
+    return render_template("accueil.html")
+
+
+@app.route("/Canvas")
+def canvas():
+    return render_template("canvas.html")
+
+
+@app.route('/Liens')
+def links():
+    return render_template("liens.html",
+                           jukebox_address=app.config["JK_ADDRESS"],
+                           canvas_address=app.config["CV_ADDRESS"],
+                           bdd_address=app.config["BDD_ADDRESS"],)
+
+
+@app.route("/Jukebox")
+def jukebox():
+    return render_template("jukebox.html",
+                           status=get_status(),
+                           jukebox_address=app.config["JK_ADDRESS"],
+                           )
+
+
+@app.route("/Inspirobot")
+def inspirobot():
+    return render_template("inspirobot.html",
+                           status=get_inspiro(),
+                           )
 
 
 @app.route("/game/")
@@ -69,4 +90,3 @@ def route_game_restart(gamename):
 def route_game_reload():
     gameManager.reload_all()
     return redirect("/game")
-

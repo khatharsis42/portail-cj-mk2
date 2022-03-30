@@ -1,0 +1,41 @@
+{% extends "page_template.html" %}
+
+{% block content %}
+<div id="Jukebox" class="tab">
+    <div class="container">
+        <h2>Jukebox</h2>
+        <div class="row m-1">
+            <p>
+                Le <a href="{{ jukebox_address }}">jukebox</a> du CJ, qui permet aux membres de passer des musiques dans
+                le local en les ajoutant à une playlist partagée.
+            </p>
+        </div>
+
+        <h3>Statut : {% if status == "ok" %}
+            <span class="badge badge-success">Démarré</span>
+            {% else %}
+            <span class="badge badge-danger">Stoppé</span>
+            {% endif %}
+        </h3>
+
+        <div class="row m-2">
+            <ul class="list-inline">
+                {% if status == "ok" %}
+                <li class="list-inline-item">
+                    <a href="/juk-stop" class="btn btn-outline-primary">Arreter le jukebox</a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="/juk-restart" class="btn btn-outline-primary">Redémarrer le jukebox (WIP)</a>
+                </li>
+                {% else %}
+                <li class="list-inline-item">
+                    <a href="/juk-start" class="btn btn-primary">Démarrer le jukebox (WIP)</a>
+                </li>
+                {% endif %}
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "page_template.html" %}
+
+{% block content %}
+<div id="Canvas" class="tab">
+    <div class="container">
+        <h2>Canvas</h2>
+        <div class="row m-1">
+            <p>
+                Initialement développé dans le cadre du Festiv@rt 2020 BDA par le Club Code, le Club Jeux et le CELL.
+                (D'après l'idée du CELL, la réflexion du Club Jeux et le développement du ClubCode), mais depuis
+                récupéré par le CJ pour notre plus grand plaisir, et permettre à chaque année de pouvoir s'exprimer et
+                garder une trace.
+            </p>
+            <p>
+                Il s'agit d'un site similaire à l'événement /r/place qui consistait en un canvas collaboratif. Le canvas
+                est censé être réinitialisé tous les ans, mais ça n'a pas été le cas en 2021 pour des raisons évidentes
+                de "on était pas sur campus donc on l'a pas remplit"
+            </p>
+            <p>
+                Le but étant de promouvoir le Pixel Art et de montrer que les gens sont aussi capables de grandes choses
+                à plusieurs !
+            </p>
+            <p>
+                Vous pouvez trouver ci dessous la vidéo du Festivart, ainsi qu'un timelapse fait main du canvas du CJ 2020.
+            </p>
+        </div>
+        <iframe src="https://www.youtube.com/embed/OiWNexw1ir8" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                style="width:100%; aspect-ratio:16/9;"
+        >
+        </iframe>
+        <video controls="controls" style="width:100%; aspect-ratio=16/9;">
+            <source src="{{ url_for('static', filename='canvas-2020.webm') }}" type="video/webm">
+        </video>
+    </div>
+</div>
+{% endblock %}

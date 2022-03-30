@@ -2,4 +2,4 @@ __pycache__
 *.pyc
 *.swp
 .idea
-lift/src/config.py
+config.py

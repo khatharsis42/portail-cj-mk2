@@ -1,3 +1,6 @@
+{% extends "page_template.html" %}
+
+{% block content %}
 <div id="Liens" class="tab">
     <div class="container">
 	    <h2>Liens vers les services du CJ</h2>
@@ -7,13 +10,15 @@
                 <a class="btn btn-outline-primary" href="{{ jukebox_address }}">Jukebox</a>
             </li>
             <li class="list-group-item border-0">
+                <a class="btn btn-outline-primary" href="{{ canvas_address }}">Canvas</a>
+            </li>
+            <li class="list-group-item border-0">
                 <a class="btn btn-outline-primary" href="{{ bdd_address }}">Base de données des livres du club jeux</a>
             </li>
             <li class="list-group-item border-0">
                 <a class="btn btn-outline-primary" href="https://discord.gg/BwXwjbp">Discord</a>
             </li>
-
         </ul>
     </div>
 </div>
-
+{% endblock %}

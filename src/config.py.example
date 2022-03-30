@@ -10,5 +10,9 @@ JK_NAME="Lift to communism"
 JK_PATH="/home/membre/soft/jukebox-ultra-nrv/"
 # Jukebox address
 JK_ADDRESS="http://jukebox.cj"
+# Canvas path
+CV_PATH="/home/membre/soft/CanvasReplace/"
+# Canvas address
+CV_ADDRESS="http://canvas.cj"
 # BDD
 BDD_ADDRESS="https://xkcd.com/404/"
